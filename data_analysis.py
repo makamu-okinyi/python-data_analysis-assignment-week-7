@@ -8,8 +8,6 @@ This script demonstrates complete data analysis workflow including:
 3. Data visualization with matplotlib
 4. Key findings and observations
 
-Author: Data Analysis Student
-Date: September 2024
 """
 
 # Import required libraries
@@ -308,27 +306,4 @@ print("\n" + "="*60)
 print("END OF ANALYSIS")
 print("="*60)
 
-# Optional: Save results to files
-try:
-    # Save statistical summary
-    with open('iris_analysis_summary.txt', 'w') as f:
-        f.write("IRIS DATASET ANALYSIS SUMMARY\n")
-        f.write("="*40 + "\n\n")
-        f.write("Descriptive Statistics:\n")
-        f.write(str(stats_df))
-        f.write("\n\nGrouped Statistics by Species:\n")
-        f.write(str(grouped_stats))
-        f.write("\n\nCorrelation Matrix:\n")
-        f.write(str(correlation_matrix))
-    
-    print("📄 Analysis summary saved to 'iris_analysis_summary.txt'")
-    
-    # Save the processed dataset
-    df.to_csv('iris_processed_data.csv', index=False)
-    print("💾 Processed dataset saved to 'iris_processed_data.csv'")
-    
-except Exception as e:
-    print(f"Note: Could not save files - {e}")
 
-print("\n🎉 Project completed successfully!")
-print("You can now submit this script (.py) or convert it to a Jupyter notebook (.ipynb)")
